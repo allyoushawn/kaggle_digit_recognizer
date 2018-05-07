@@ -8,7 +8,7 @@ def read_csv_data(file_name, data_type='test'):
                 # The example line
                 continue
             tokens = line.rstrip().split(',')
-            if data_type == 'train':
+            if data_type == 'train' or data_type == 'dev':
                 labels.append(int(tokens[0]))
                 data.append( [float(x) / 255. for x in tokens[1:]])
             elif data_type == 'test':
